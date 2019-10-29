@@ -27,7 +27,7 @@ if not args.address:
 	if not args.port:
 		args.address = "0.0.0.0:8000"
 	else:
-		args.address = "0.0.0.0:%s" % port
+		args.address = "0.0.0.0:%s" % args.port
 
 host, port = args.address.split(':')
 Handler = http.server.SimpleHTTPRequestHandler
