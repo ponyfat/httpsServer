@@ -1,10 +1,10 @@
 from setuptools import setup
 
-print('start')
 setup(
     name='server',
     version=0.1,
-    description='Utilite for python file servers',
+    description='Utility for python file servers',
+    url="https://github.com/ponyfat/httpsServer",
     entry_points = {
         'console_scripts': ['server=server.httpServer:main'],
     },
