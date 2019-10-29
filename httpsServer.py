@@ -8,6 +8,10 @@ import subprocess
 parser = ArgumentParser()
 parser.add_argument("-a", "--addr", dest="address",
                     help="Address host:port", metavar="ADDRESS")
+
+parser.add_argument("-p", "--port", dest="port",
+                    help="Address port on localhost", metavar="PORT")
+
 parser.add_argument("-c", "--cert", dest="certfile",
                     help="SSL certfile", metavar="CERT")
 
@@ -20,7 +24,10 @@ parser.add_argument("-s", "--default_secure", dest="default_secure", action="sto
 args = parser.parse_args()
 
 if not args.address:
-	args.address = "0.0.0.0:8000"
+	if not args.port:
+		args.address = "0.0.0.0:8000"
+	else:
+		args.address = "0.0.0.0:%s" % port
 
 host, port = args.address.split(':')
 Handler = http.server.SimpleHTTPRequestHandler
