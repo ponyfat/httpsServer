@@ -19,8 +19,6 @@ parser.add_argument("-s", "--default_secure", dest="default_secure", action="sto
 
 args = parser.parse_args()
 
-print(args.address)
-
 if not args.address:
 	args.address = "0.0.0.0:8000"
 
