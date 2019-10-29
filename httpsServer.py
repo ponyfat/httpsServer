@@ -6,7 +6,7 @@ import subprocess
 
 
 parser = ArgumentParser()
-parser.add_argument("-a", "--addr", dest="address",
+parser.add_argument(dest="address",
                     help="Address host:port", metavar="ADDRESS")
 parser.add_argument("-c", "--cert", dest="certfile",
                     help="SSL certfile", metavar="CERT")
